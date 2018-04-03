@@ -116,7 +116,8 @@ def plot_graph(jobs):
         lines.append(go.Scatter(x=range(size - len(results[job]['percent']), size),
                                 y=results[job]['percent'],
                                 text=results[job]['names'],
-                                name='%s - %s' % (job, CRITICAL)))
+                                name='%s - %s' % (job, CRITICAL),
+                                mode="lines+markers"))
 
     data=go.Data(lines)
     layout=go.Layout(title="Regression Status", xaxis={'title':'Last Builds'}, yaxis={'title':'Percent', 'range':[0,100]})
